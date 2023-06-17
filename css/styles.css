@@ -1,0 +1,303 @@
+:root {
+  --clr-body: #48556a;
+  --clr-icon: #6d7f97;
+  --clr-date: #9eafc2;
+  --clr-bg: #ecf2f8;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  max-width: 1440px;
+  min-width: 375px;
+}
+
+body {
+  align-items: center;
+  background-color: var(--clr-bg);
+  color: var(--clr-body);
+  display: flex;
+  font-family: "Manrope", sans-serif;
+  min-height: 100vh;
+}
+
+.wrapper {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-col {
+  width: 45%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+}
+
+.left-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right-col {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #fff;
+  padding: 2.5em;
+  width: 55%;
+}
+
+.right-col h1 {
+  line-height: 1.5;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.content {
+  line-height: 1.7;
+  font-size: 1.3rem;
+  margin: 1em 0;
+  color: var(--clr-icon);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-left {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 5em;
+}
+
+.date {
+  color: var(--clr-date);
+  margin-top: 0.2em;
+}
+
+.col-right {
+  position: relative;
+}
+
+.icon {
+  border-radius: 50%;
+  background-color: var(--clr-bg);
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.icon:active {
+  transform: scale(0.96);
+  background-color: var(--clr-body);
+}
+
+.media {
+  position: absolute;
+  bottom: 54px;
+  left: -80px;
+  background-color: var(--clr-body);
+  padding: 0.5em 2em;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: all 0.25s ease;
+  z-index: 0;
+}
+
+.media::after {
+  position: absolute;
+  content: "";
+  bottom: -0.5rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--clr-body);
+  transform: rotate(45deg);
+}
+
+.media li {
+  list-style-type: none;
+  padding: 0.7em;
+}
+
+.media a {
+  text-decoration: none;
+  color: var(--clr-date);
+}
+
+.text-link {
+  letter-spacing: 5px;
+}
+
+.social-icon img {
+  width: 16px;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    max-width: 90%;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .avatar-name {
+    font-size: 1.1rem;
+  }
+
+  .col-left {
+    gap: 1.2em;
+  }
+
+  .content {
+    font-size: 1.1rem;
+    margin-bottom: 2em;
+  }
+
+  .left-col {
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+  }
+
+  .right-col {
+    padding: 3.5em 3.5em 1.5em;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+  }
+
+  .right-col h1 {
+    font-size: 1.5rem;
+  }
+
+  .right-col,
+  .left-col {
+    width: 100%;
+  }
+
+  .avatar {
+    width: 3.5em;
+  }
+
+  .icon {
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    padding: 7px;
+  }
+
+  .icon:active {
+    background-color: var(--clr-bg);
+  }
+
+  .icon img {
+    width: 13px;
+  }
+
+  .col-right {
+    position: static;
+  }
+
+  .media {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 1.6em 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .media::after {
+    content: none;
+  }
+
+  .media li {
+    padding: 0 1em;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 800px) {
+  .wrapper {
+    max-width: 70%;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .avatar-name {
+    font-size: 1.2rem;
+  }
+
+  .col-left {
+    gap: 1.2em;
+  }
+
+  .content {
+    font-size: 1.3rem;
+    margin-bottom: 2em;
+  }
+
+  .right-col {
+    padding: 3.5em 3.5em 1.5em;
+  }
+
+  .right-col h1 {
+    font-size: 1.7rem;
+  }
+
+  .right-col,
+  .left-col {
+    width: 100%;
+  }
+
+  .avatar {
+    width: 3.5em;
+  }
+
+  .icon {
+    padding: 7px;
+  }
+
+  .icon img {
+    width: 13px;
+  }
+}
